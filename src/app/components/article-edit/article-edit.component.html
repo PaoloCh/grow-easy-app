@@ -1,0 +1,17 @@
+<div class="edit-container">
+    <form [formGroup]="editForm" (ngSubmit)="onSaveChanges()">
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Link" formControlName="link">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Image" formControlName="image">
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" type="submit" (click)="onSaveChanges">Guardar</button>
+      <button mat-raised-button color="warn" type="button" (click)="onCancelEdit()">Cancelar</button>
+    </form>
+  </div>
+  

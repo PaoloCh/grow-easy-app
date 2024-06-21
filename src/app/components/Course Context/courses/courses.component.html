@@ -1,0 +1,166 @@
+<section class="container">
+
+    <div class="first-block">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="top">
+            <h1 class="title">
+                Explore issues and skills
+            </h1>
+
+            <button mat-raised-button color="disabled" (click)="openAddCourse()">Add Course</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <section class="container2">
+            <div class="box-large">
+                <img src="https://media.discordapp.net/attachments/1148057148522233868/1166810267506708602/Rectangle_11351.png?ex=6633dfbe&is=66328e3e&hm=b857f0999033d5d719823ced803f34e1605b49c8916a3f48fa65c29cf0810331&=&format=webp&quality=lossless" alt="Hidroponia">
+                <div class="topleft">HYDROPONICS</div>
+            </div>
+            <div class="box1">
+                <img src="https://media.discordapp.net/attachments/1148057148522233868/1166810267213119558/Rectangle_11361.png?ex=6633dfbd&is=66328e3d&hm=62ee65d6154188d33b7d76d417510d5db0b294eca429e83212f65231ac12165e&=&format=webp&quality=lossless" alt="Agronegocios">
+                <div class="bottomleft">AGRIBUSINESS</div>
+            </div>
+            <div class="box1">
+                <img src="https://media.discordapp.net/attachments/1148057148522233868/1166810266944688168/Rectangle_11371.png?ex=6633dfbd&is=66328e3d&hm=dff7faefde57be7976066f36a219c72e40f8dd84f7c52287ff6b50567a54020b&=&format=webp&quality=lossless" alt="Horticultura">
+                <div class="bottomleft">HORTICULTURE</div>
+            </div>
+            <div class="box1">
+                <img src="https://media.discordapp.net/attachments/1148057148522233868/1166810266659471380/Rectangle_11391.png?ex=6633dfbd&is=66328e3d&hm=3d7a44f801e45cdcb16ad6696cb5e2e2823a6cb863bfda07c838be392dcd941f&=&format=webp&quality=lossless" alt="Riego">
+                <div class="bottomleft">IRRIGATION</div>
+            </div>
+            <div class="box1">
+                <img src="https://cdn.discordapp.com/attachments/1148057148522233868/1166810547023515658/Rectangle_11381.png?ex=6633e000&is=66328e80&hm=32c611aead09c17b11fe51504252bfd0329e1218cf0545a066094a09a0cafcf4&" alt="Agricultura Vertical">
+                <div class="bottomleft">VERTICAL FARMING</div>
+            </div>
+        </section>
+
+    </div>
+    <div class="icons">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_arrow_left"></mat-icon>
+        <mat-icon class="icon-right" aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_arrow_right"></mat-icon>
+    </div>
+
+  <hr>
+
+    <div class="second-block">
+        <h1 class="title">
+            Hydroponics at Home
+        </h1>
+        <div class="card-container">
+            <mat-card *ngFor="let allcourse of filteredCoursesbyCategory1">
+
+                    <div class="box" >
+
+                        <mat-card-header>
+                            <img  [src]="allcourse.image" alt="{{allcourse.name}}">
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="image-text" >
+                                <h2>{{allcourse.name}}</h2>
+                                <ul>
+                                    <li>Duration: {{allcourse.duration}} weeks </li>
+                                    <li> Description: {{allcourse.description}}</li>
+                                </ul>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button class="matBtn" (click)="redirectToPayment(allcourse)">$ {{ allcourse.price }}</button>
+                            <button mat-button class="matBtn">{{ allcourse.rating }} ⭐</button>
+                        </mat-card-actions>
+
+
+                    </div>
+
+
+            </mat-card>
+
+        </div>
+
+    </div>
+  <hr>
+    <div class="trhith-block">
+        <h1 class="title">
+            Growing Plants
+        </h1>
+        <div class="card-container-2">
+            <mat-card *ngFor="let allcourse of filteredCoursesbyCategory2" class="container-2">
+
+                    <div class="box" >
+
+                        <mat-card-header>
+                            <img [src]="allcourse.image" alt="{{allcourse.name}}">
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="image-text" >
+                                <h2>{{allcourse.name}}</h2>
+                                <ul>
+                                    <li>Duration: {{allcourse.duration}} weeks </li>
+                                    <li> Description: {{allcourse.description}}</li>
+                                </ul>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button class="matBtn" (click)="redirectToPayment(allcourse)">${{allcourse.price }}</button>
+                            <button mat-button class="matBtn">{{ allcourse.rating }} ⭐</button>
+                        </mat-card-actions>
+
+
+                    </div>
+
+
+            </mat-card>
+
+        </div>
+
+    </div>
+  <hr>
+    <div class="trhith-block">
+        <h1 class="title">
+            New Courses
+        </h1>
+        <div class="card-container-3">
+            <mat-card *ngFor="let allcourse of filteredCoursesbyCategory3" class="container-3">
+
+                    <div class="box" >
+
+                        <mat-card-header>
+                            <img [src]="allcourse.image" alt="{{allcourse.name}}">
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="image-text" >
+                                <h2>{{allcourse.name}}</h2>
+                                <ul>
+                                    <li>Duration: {{allcourse.duration}} weeks </li>
+                                    <li> Description: {{allcourse.description}}</li>
+                                </ul>
+                                <p>Created At: {{allcourse.dateCreated | date}}</p>
+                            </div>
+
+                        </mat-card-content>
+
+                        <mat-card-actions>
+                            <button mat-button class="matBtn" (click)="redirectToPayment(allcourse)">{{ allcourse.price | currency}}</button>
+                            <button mat-button class="matBtn">{{ allcourse.rating }} ⭐</button>
+                        </mat-card-actions>
+
+
+                    </div>
+
+
+            </mat-card>
+
+        </div>
+
+    </div>
+
+</section>
+

@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="lista-izquierda"  >
+    <mat-list >
+      <mat-list-item id="InitDate">LISTA</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item id="Date">Today</mat-list-item>
+      <mat-divider></mat-divider>
+      <ul *ngFor="let article of articles">
+        <a (click)="scrollToArticle(article.id)">{{ article.title }}<br></a>
+      </ul>
+    </mat-list>
+  </div>
+
+  <div class="centered">
+    <div class="tendencia-card">
+      <h3>#InTrend</h3>
+    </div>
+
+    <mat-card-header>
+      <mat-card-title>List of Articles</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card *ngFor="let article of articles" class="article-card" style="margin: 20px" [id]="'article-' + article.id">
+        <h1>{{ article.title }}</h1>
+        <img [src]="article.image" alt="{{article.name}}" style="margin:5%;">
+        <mat-card-content>
+          <h2>{{ article.name }}</h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="warn" (click)="deleteArticle(article.id)">Eliminar</button>
+          <button mat-button color="primary" (click)="editArticle(article)">Editar</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-card-content>
+  </div>
+
+  <div class="container02">
+    <div class="card6">
+      <button mat-raised-button class="button" style="position: absolute;" color="primary" (click)="addArticle()">Agregar</button>
+    </div>
+  </div>
+
+  <div *ngIf="editMode" class="overlay">
+    <app-article-edit
+      [article]="selectedArticle"
+      (saveChanges)="saveArticle($event)"
+      (cancelEdit)="cancelEdit()"
+    ></app-article-edit>
+  </div>
+</div>
