@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ArticlesService {
 
-  //private urlApi = 'https://articles-service-groweasy.azurewebsites.net/api/v1/articles';
-  private urlApi='http://localhost:8008/api/v1/articles';
+  private urlApi = 'https://articles-service-v2.azurewebsites.net/api/v1/articles';
+  //private urlApi='http://localhost:8008/api/v1/articles';
 
   constructor(private http: HttpClient) { }
 

@@ -8,8 +8,8 @@ import { DataModel } from '../models/data.model';
 })
 export class CoursesService {
 
-      baseUrl='http://localhost:8005/api/v1/courses'
-   // baseUrl = 'https://courses-service-groweasy.azurewebsites.net/api/v1/courses';
+   //   baseUrl='http://localhost:8005/api/v1/courses'
+    baseUrl = 'https://courses-service-v2.azurewebsites.net/api/v1/courses';
 
     constructor(private http: HttpClient) { }
 

@@ -7,8 +7,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
     providedIn: 'root'
 })
 export class NewsService {
-  baseUrl='http://localhost:8009/api/v1/news'
-    //baseUrl = 'https://news-service-groweasy.azurewebsites.net/api/v1/news';
+  //baseUrl='http://localhost:8009/api/v1/news'
+  baseUrl = 'https://news-service-groweasy.azurewebsites.net/api/v1/news';
 
     constructor(private http: HttpClient) { }
 

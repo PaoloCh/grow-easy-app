@@ -21,8 +21,11 @@ export interface Credential {
 })
 export class AuthService {
   //private apiUrl = 'https://user-service-groweasy.azurewebsites.net/api/v1/users';
-  private apiUrl = 'http://localhost:8007/api/v1/users';
-  private emailApiUrl = 'http://localhost:8007/api/v1/email';
+  //private apiUrl = 'http://localhost:8007/api/v1/users';
+  //private emailApiUrl = 'http://localhost:8007/api/v1/email';
+
+  private apiUrl = 'https://user-service-groweasy.azurewebsites.net/api/v1/users';
+  private emailApiUrl = 'https://user-service-groweasy.azurewebsites.net/api/v1/email'; 
 
   private authStateSubject = new BehaviorSubject<User | null>(null);
   authState$: Observable<User | null> = this.authStateSubject.asObservable();

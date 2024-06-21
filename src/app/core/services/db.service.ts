@@ -13,10 +13,10 @@ import { PostModel } from '../models/post.model';
 })
 export class DbService {
 
- // coursesUrl = 'https://courses-service-groweasy.azurewebsites.net/api/v1/courses';
- // postsUrl = 'https://community-service-groweasy.azurewebsites.net/api/v1/posts';
-    coursesUrl= 'http://localhost:8005/api/v1/courses';
-    postsUrl='http://localhost:8006/api/v1/posts';
+  coursesUrl = 'https://courses-service-v2.azurewebsites.net/api/v1/courses';
+  postsUrl = 'https://community-service-v2.azurewebsites.net/api/v1/posts';
+ //   coursesUrl= 'http://localhost:8005/api/v1/courses';
+ //   postsUrl='http://localhost:8006/api/v1/posts';
   constructor(private http: HttpClient) {}
 
   httpOptions = {
