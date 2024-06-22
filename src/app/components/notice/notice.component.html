@@ -1,34 +1,41 @@
 <div class="container">
-    <div class="lista-izquierda">
-      <mat-list>
-        <mat-list-item id="InitDate">LISTA</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item id="Date">Today</mat-list-item>
-        <mat-divider></mat-divider>
-        <ul *ngFor="let article of articles">
-          <a (click)="scrollToArticle(article.title)">{{ article.title }}<br></a>
-        </ul>
-      </mat-list>
-    </div>
-  
-    <div class="centered">
-      <div class="tendencia-card">
-        <h3>#InTrend</h3>
-      </div>
-  
-      <mat-card-header>
-        <mat-card-title>NOTICES</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-card *ngFor="let article of articles" class="article-card" [id]="article.title" style="margin: 20px">
-          <h1>{{ article.title }}</h1>
-          <img  [src]="article.image" alt={{article.image}}>
-          <mat-card-content>
-            <h2>{{ article.name }}</h2>
-          </mat-card-content>
-        </mat-card>
-      </mat-card-content>
-    </div>
+  <div class="lista-izquierda">
+    <mat-list>
+      <mat-list-item id="InitDate">LISTA</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item id="Date">Today</mat-list-item>
+      <mat-divider></mat-divider>
+      <ul *ngFor="let article of articles">
+        <a (click)="scrollToArticle(article.title)">{{ article.title }}</a><br>
+      </ul>
+    </mat-list>
   </div>
-  
 
+  <div class="centered">
+  
+    <mat-card-content>
+      <div class="container">
+        <div class="centered">
+          <div class="tendencia-card">
+            <h3>#InTrend</h3>
+          </div>
+
+          <mat-card-header>
+            <mat-card-title>NOTICES</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-card *ngFor="let article of articles" class="article-card" [id]="article.title" style="margin: 20px;width: 700px;">
+              <h1>{{ article.title }}</h1>
+              <a href="{{ article.link }}" target="_blank" rel="noopener noreferrer">
+                <img [src]="article.image" alt="{{ article.image }}" style="cursor: pointer;width: 100%;">
+              </a>
+              <mat-card-content>
+                <h2>{{ article.name }}</h2>
+              </mat-card-content>
+            </mat-card>
+          </mat-card-content>
+        </div>
+      </div>
+    </mat-card-content>
+  </div>
+</div>
